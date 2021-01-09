@@ -1,16 +1,31 @@
-my_list = [7, 5, 3, 3, 2]
-print(f"Рейтинг - {my_list}")
-digit = int(input("Введите число (00 - выход) "))
-while digit != 111:
-    for el in range(len(my_list)):
-        if my_list[el] == digit:
-            my_list.insert(el + 1, digit)
-            break
-        elif my_list[0] < digit:
-            my_list.insert(0, digit)
-        elif my_list[-1] > digit:
-            my_list.append(digit)
-        elif my_list[el] > digit and my_list[el + 1] < digit:
-            my_list.insert(el + 1, digit)
-    print(f"текущий список - {my_list}")
-    digit = int(input("Введите число "))
+
+'''
+Программа запрашивает у пользователя строку чисел, разделенных
+ пробелом. При нажатии Enter должна выводиться сумма чисел.
+Пользователь может продолжить ввод чисел, разделенных пробелом и
+снова нажать Enter. Сумма вновь введенных чисел будет добавляться
+к уже подсчитанной сумме. Но если вместо числа вводится специальный
+символ, выполнение программы завершается. Если специальный символ
+введен после нескольких чисел, то вначале нужно добавить сумму этих
+чисел к полученной ранее сумме и после этого завершить программу.
+'''
+
+def my_sum ():
+    sum_res = 0
+    ex = False
+    while ex == False:
+        number = input('введи число,й или q для выхода - ').split()
+
+        res = 0
+        for el in range(len(number)):
+            if number[el] == 'q' or number[el] == 'Q' or number[el] == 'й' or number[el] == 'Й':
+                ex = True
+                break
+            else:
+                res = res + int(number[el])
+        sum_res = sum_res + res
+        print(f'текущая сумма {sum_res}')
+    print(f'итоговая сумма {sum_res}')
+
+
+my_sum()
