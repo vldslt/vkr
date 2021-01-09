@@ -40,3 +40,36 @@ print(q41+q42+q43)
 
 print('СЛЕДУЮЩЕЕ ЗАДАНИЕ')
 
+a=input("Введите число: ")
+m = max([int(i) for i in str(a)])
+print(m)
+
+print('СЛЕДУЮЩЕЕ ЗАДАНИЕ')
+
+z = int(input('Выручка фирмы составляет - '))
+x = int(input('Издержки фирмы -'))
+p = z - x
+
+if p >= 0:
+    print('прибыль составляет - ')
+    print(str(p))
+    print('Рентабильность составляет -')
+    print("%.2f"%(p / z))
+    p1 = int(input('Сколько человек работает -'))
+    p2 = p / p1
+    print('выручка на еденицу составляет - ')
+    print(str(p2))
+
+else:
+    print('долг составляет - ')
+    print(str(p))
+
+    print('СЛЕДУЮЩЕЕ ЗАДАНИЕ')
+
+a6 = int(input('первый день -'))
+a66 = int(input('цель -'))
+day = 1
+while a66 - a6 > 0:
+    a6 = a6 + (a6 * 0.1)
+    day += 1
+print(day)
